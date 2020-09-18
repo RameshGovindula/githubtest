@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="http://cdn.webix.com/edge/webix.css" type="text/css" charset="utf-8">
+    <script src="http://cdn.webix.com/edge/webix.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.7.94/css/materialdesignicons.css" type="text/css"
+        charset="utf-8">
+</head>
+
+<body>
+    <div>
+        <script type="text/javascript" charset="utf-8">
+            webix.ui({
+                view: "scrollview",
+                scroll: "y",
+                type: "space",
+                body: {
+                    rows: [
+                        {
+                            view: "toolbar",
+                            height: 45,
+                            css: "colorr",
+                            id: "myToolbar",
+                            cols: [{
+                                view: "menu",
+                                align: "center",
+                                css: "colorr",
+                                data: [
+                                    {
+                                        id: "1", value: "Menu", submenu: [
+                                            { value: "Basic Info", href: "Home.html", id: "Home" },
+                                            { value: "Favourite Place", href: "FavouritePlace.html", id: "FavPlacePage" },
+                                            { value: "Places on Map", href: "PlacesAndMap.html", id: "FavPlacesMap" }
+                                        ]
+                                    }
+                                ],
+                                type: {
+                                    subsign: true
+                                }
+                            },
+                            { view: "label", css: "my_bold", id: "welcomelabel", label: "Welcome", width: 300, height: 40, align: "center" },
+                            {},
+                            {view:"button",id:"login",label:"Login" ,height:40,width:60,align:"right",onItemClick:"Login.html"}
+                        ]
+                        },
+                        {
+                            view: "layout",
+                            id: "layoutbar",
+                            borderless: true,
+                            height: 600,
+                            type: "space",
+                            cols: [{
+                                type: "clean",
+                                rows: [
+                                    { view: "template", autoheight: true, template: "Introduction :", css: "my_style", id: "heading" },
+                                    { view: "template", height: 600, css: "my_bold", fillspace: true, template: "Hi, my name is Ramesh Babu Govindula from hyderabad city which is in Telangana state of India. I am a master's student with major as computer science in Purdue university northwest .I have completed by bachelor's in computer science from JNTU Hyderabad in 2015. Post my undergrad I wroked for 5 years in three organizations as a software engineer.<br>My family consists of 6 members, My mother, father, grandmother, elder brother, younger sister and me. Spending time with them is always fun and with loads of affection, it has always been my favourite.<br>My brother and sister are always my bestfriends and go to for most of my problems and surely blessed to have them.<br><br>My hobbies include :<br> ◾ Reading books<br> ◾ Watching TV series(probably can't be considered as hobby 😛).<br> ◾ Visiting Tourist spots<br><br>You can navigate to the page about my favourite place which also has a video snippet from Menu present on the top left corner of this page.<br><br>I love to visit tourist spots and thus I have visited many places in India, you can find the page about the list of places I like along with a map having location pointers from Menu.<br><br>Thank you for visiting the page and reading it.Below are my social media profile links, do visit them 😊.", id: "PageContent" },
+                                ]
+                            },
+                            {
+                                rows: [
+                                    { view: "iframe", id: "Selfie", align: "center", autoheight: true, src: "https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/37678330_1791877024253898_6465847945848684544_n.jpg?_nc_cat=102&_nc_sid=730e14&_nc_ohc=EFw1J5RI4hgAX8k2KWB&_nc_ht=scontent-ort2-1.xx&oh=97c480cfd90876921d90ce47f913e917&oe=5F72F58E" },
+                                ]
+                            },
+                            ]
+                        },
+                        {
+                            view: "layout",
+                            id: "Footer",
+                            borderless: true,
+                            height: 50,
+                            type: "footer",
+                            css: "colorr",
+                            cols: [
+                                { view: "label", width: 550, height: 70, label: "" },
+                                {
+                                    view: "button", type: "icon", icon: "mdi mdi-instagram", label: "", id: "Instagram", href: "https://www.instagram.com/ramesh_govindula/", click: function () {
+                                        window.open(this.config.href);
+                                    }
+                                },
+                                {
+                                    view: "button", type: "icon", icon: "mdi mdi-facebook", label: "", id: "Facebook", href: "https://www.facebook.com/rameshgovindula.ramesh/", click: function () {
+                                        window.open(this.config.href);
+                                    }
+                                },
+                                {
+                                    view: "button", type: "icon", icon: "mdi mdi-linkedin", label: "", id: "LinkedIn", href: "https://www.linkedin.com/in/ramesh-govindula-71035280/", click: function () {
+                                        window.open(this.config.href);
+                                    }
+                                },
+                                {
+                                    view: "button", type: "icon", icon: "mdi mdi-twitter", label: "", id: "Twitter", href: "https://twitter.com/rameshgovindula", click: function () {
+                                        window.open(this.config.href);
+                                    }
+                                },
+                                { view: "label", width: 550, height: 70, label: "" }
+                            ]
+                        },
+                        {
+                            view: "label",
+                            id: "Thanks",
+                            borderless: true,
+                            height: 60,
+                            type: "clean",
+                            css: "colorr",
+                            align: "center",
+                            label: "Thanks for visiting this site, see you soon"
+                        }
+                    ]
+                }
+            });
+            $$("login").attachEvent("onItemClick", function(){
+                webix.send("Login.html");
+            });
+        </script>
+        <style>
+            .my_style {
+                font-weight: bold;
+                font-size: 20px;
+                font-style: italic;
+                font-family: "Times New Roman";
+            }
+
+            .my_bold {
+                font-family: "Times New Roman";
+                font-style: italic;
+                font-size: 18px;
+                color: black;
+            }
+
+            .colorr {
+                background-color: lightgray;
+                font-weight: bold;
+                font-family: "Times New Roman";
+                font-style: italic;
+                font-size: 30px;
+                color: black;
+            }
+        </style>
+    </div>
+</body>
+
+</html>
