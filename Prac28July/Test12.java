@@ -31,7 +31,7 @@ public class Test12 {
 			System.out.println(" ");
 		}
 		System.out.println(" "+Math.sqrt(36));
-		//check
+		scanner.close();
 	}
 	
 }
