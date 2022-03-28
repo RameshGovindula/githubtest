@@ -20,6 +20,7 @@ public class Test12 {
 		System.out.println(t);
 		//int[][] ab= new int[3][4]; 
 		// TODO Auto-generated method stub
+		//Checking new brach
 		for(int i=0;i<10;i++) {
 			for(int k=0;k<10-i;k++) {
 			System.out.print(" ");
